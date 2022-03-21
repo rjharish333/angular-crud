@@ -9,7 +9,7 @@ import {Book} from './Book';
 
 export class CrudService {
 
-  REST_API: string = 'http:://localhost:8000/api';
+  REST_API: string = 'http://localhost:8000/api';
 
   httpHeaders = new HttpHeaders().set('content-type', 'application/json');
 
@@ -18,7 +18,7 @@ export class CrudService {
   // add new book
   addBook(data:Book): Observable<any>
   {
-    let API_URL = `${this.REST_API}'/add-book`;
+    let API_URL = `${this.REST_API}/add-book`;
 
     return this.httpClient
                   .post(API_URL, data)
@@ -64,7 +64,7 @@ export class CrudService {
 
   deleteBook(id:any):Observable<any>
   {
-    let API_URL = `${this.REST_API}/delete/${id}`;
+    let API_URL = `${this.REST_API}/delete-book/${id}`;
 
     let headers = {headers: this.httpHeaders}
     return this.httpClient 
